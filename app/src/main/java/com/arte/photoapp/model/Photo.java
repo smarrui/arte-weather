@@ -2,6 +2,7 @@ package com.arte.photoapp.model;
 
 
 import java.io.Serializable;
+import java.util.regex.Pattern;
 
 public class Photo {
 
@@ -31,7 +32,8 @@ public class Photo {
     }
 
     public String getUrl() {
-        return url;
+        String bg = url.substring(url.length() - 6, url.length());
+        return "https://placeholdit.imgix.net/~text?txtsize=20&bg=" + bg + "&txt=150%C3%97150&w=500&h=500";
     }
 
     public void setUrl(String url) {
@@ -39,7 +41,10 @@ public class Photo {
     }
 
     public String getThumbnailUrl() {
-        return thumbnailUrl;
+        // http://placehold.it/150/30ac17
+        // https://placeholdit.imgix.net/~text?txtsize=14&bg=30ac17&txt=150%C3%97150&w=150&h=150
+        String bg = thumbnailUrl.substring(thumbnailUrl.length() - 6, thumbnailUrl.length());
+        return "https://placeholdit.imgix.net/~text?txtsize=14&bg=" + bg + "&txt=150%C3%97150&w=150&h=150";
     }
 
     public void setThumbnailUrl(String thumbnailUrl) {
