@@ -9,28 +9,28 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context=".activities.PhotoListActivity">
+    tools:context=".activities.WeatherListActivity">
 
     <!--
-    This layout is a two-pane layout for the Photos
+    This layout is a two-pane layout for the Weather list
     master/detail flow.
     
     -->
 
     <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/photo_list"
-        android:name="com.arte.photoapp.PhotoListFragment"
+        android:id="@+id/weather_list"
+        android:name="com.arte.weather.WeatherListFragment"
         android:layout_width="@dimen/item_width"
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context=".activities.PhotoListActivity"
-        tools:listitem="@layout/photo_list_item" />
+        tools:context=".activities.WeatherListActivity"
+        tools:listitem="@layout/weather_list_item" />
 
     <FrameLayout
-        android:id="@+id/photo_detail_container"
+        android:id="@+id/weather_detail_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="3" />

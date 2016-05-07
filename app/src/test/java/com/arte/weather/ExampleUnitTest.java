@@ -1,4 +1,4 @@
-package com.arte.photoapp;
+package com.arte.weather;
 
 import org.junit.Test;
 

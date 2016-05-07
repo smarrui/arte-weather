@@ -1,6 +1,5 @@
-package com.arte.photoapp.activities;
+package com.arte.weather.activities;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -9,15 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.arte.photoapp.R;
-import com.arte.photoapp.fragments.PhotoDetailFragment;
+import com.arte.weather.R;
+import com.arte.weather.fragments.WeatherDetailFragment;
 
-public class PhotoDetailActivity extends AppCompatActivity {
+public class WeatherDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_photo_detail);
+        setContentView(R.layout.activity_weather_detail);
         setupActivity();
         setupFragment(savedInstanceState);
     }
@@ -26,7 +25,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            NavUtils.navigateUpTo(this, new Intent(this, PhotoListActivity.class));
+            NavUtils.navigateUpTo(this, new Intent(this, WeatherListActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -48,11 +47,11 @@ public class PhotoDetailActivity extends AppCompatActivity {
         }
 
         Bundle fragmentArguments = new Bundle();
-        fragmentArguments.putString(PhotoDetailFragment.ARG_PHOTO_ID, getIntent().getStringExtra(PhotoDetailFragment.ARG_PHOTO_ID));
-        PhotoDetailFragment fragment = new PhotoDetailFragment();
+        fragmentArguments.putString(WeatherDetailFragment.ARG_WEATHER_ID, getIntent().getStringExtra(WeatherDetailFragment.ARG_WEATHER_ID));
+        WeatherDetailFragment fragment = new WeatherDetailFragment();
         fragment.setArguments(fragmentArguments);
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.photo_detail_container, fragment)
+                .add(R.id.weather_detail_container, fragment)
                 .commit();
 
     }

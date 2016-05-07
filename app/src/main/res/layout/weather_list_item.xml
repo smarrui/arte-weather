@@ -4,14 +4,8 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <com.android.volley.toolbox.NetworkImageView
-        android:id="@+id/photo_thumbnail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin" />
-
     <TextView
-        android:id="@+id/photo_title"
+        android:id="@+id/weather_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
