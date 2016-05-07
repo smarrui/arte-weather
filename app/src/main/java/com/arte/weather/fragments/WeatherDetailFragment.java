@@ -24,6 +24,10 @@ public class WeatherDetailFragment extends Fragment implements GetWeatherRequest
     private ProgressDialog mProgressDialog;
     private TextView mWeatherDetail;
     private TextView mWeatherMoreDetail;
+    private TextView mTemperature;
+    private TextView mPressure;
+    private TextView mHumidity;
+    private TextView mWindSpeed;
 
     public WeatherDetailFragment() {
     }
@@ -43,8 +47,12 @@ public class WeatherDetailFragment extends Fragment implements GetWeatherRequest
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.weather_detail, container, false);
-            mWeatherDetail = (TextView) rootView.findViewById(R.id.item_weather_weather_detail);
+        mWeatherDetail = (TextView) rootView.findViewById(R.id.item_weather_weather_detail);
         mWeatherMoreDetail = (TextView) rootView.findViewById(R.id.item_weather_weather_more_detail);
+        mTemperature = (TextView) rootView.findViewById(R.id.item_weather_temperature);
+        mPressure = (TextView) rootView.findViewById(R.id.item_weather_pressure);
+        mHumidity = (TextView) rootView.findViewById(R.id.item_weather_humidity);
+        mWindSpeed = (TextView) rootView.findViewById(R.id.item_weather_wind_speed);
         if (mWeather != null) {
             loadWeatherDetails(mWeather);
         }
@@ -76,6 +84,10 @@ public class WeatherDetailFragment extends Fragment implements GetWeatherRequest
         }
         mWeatherDetail.setText(mWeather.getWeatherDetail());
         mWeatherMoreDetail.setText(mWeather.getWeatherMoreDetail());
+        mTemperature.setText(mWeather.getTemperature());
+        mPressure.setText(mWeather.getPressure());
+        mHumidity.setText(mWeather.getHumidity());
+        mWindSpeed.setText(mWeather.getWindSpeed());
     }
 
     @Override

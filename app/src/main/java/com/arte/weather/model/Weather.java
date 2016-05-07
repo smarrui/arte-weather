@@ -10,8 +10,6 @@ public class Weather {
     private String temperature;
     private String pressure;
     private String humidity;
-    private String temperatureMin;
-    private String temperatureMax;
     private String windSpeed;
 
     public Weather() {
@@ -58,22 +56,6 @@ public class Weather {
 
     public void setHumidity(String humidity) {
         this.humidity = humidity;
-    }
-
-    public String getTemperatureMin() {
-        return temperatureMin;
-    }
-
-    public void setTemperatureMin(String temperatureMin) {
-        this.temperatureMin = temperatureMin;
-    }
-
-    public String getTemperatureMax() {
-        return temperatureMax;
-    }
-
-    public void setTemperatureMax(String temperatureMax) {
-        this.temperatureMax = temperatureMax;
     }
 
     public String getWindSpeed() {

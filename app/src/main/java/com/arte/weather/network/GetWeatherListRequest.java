@@ -20,7 +20,7 @@ import java.util.List;
 
 public class GetWeatherListRequest {
 
-    private static final String URL = "http://api.openweathermap.org/data/2.5/find?lat=" + Constants.LATITUDE + "&lon=" + Constants.LONGITUDE + "&cnt=" + Constants.CITIES_SIZE + "&APPID=" + Constants.API_KEY + "&lang=" + Constants.LANGUAGE;
+    private static final String URL = "http://api.openweathermap.org/data/2.5/find?lat=" + Constants.LATITUDE + "&lon=" + Constants.LONGITUDE + "&cnt=" + Constants.CITIES_SIZE + "&APPID=" + Constants.API_KEY;
 
     public interface Callbacks {
         void onGetWeatherListSuccess(List<Weather> weatherList);

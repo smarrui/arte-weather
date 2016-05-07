@@ -3,4 +3,8 @@
     <string name="name_weather_detail">Weather Detail</string>
     <string name="weather_list.loading">Loading cities...</string>
     <string name="weather_detail.loading">Loading city weather...</string>
+    <string name="temperature">Temperature (ºC)</string>
+    <string name="humidity">Humidity (%)</string>
+    <string name="pressure">Pressure (hPa)</string>
+    <string name="wind_speed">Wind speed (meter/sec)</string>
 </resources>

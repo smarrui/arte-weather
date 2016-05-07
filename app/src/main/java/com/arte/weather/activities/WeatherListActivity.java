@@ -64,7 +64,7 @@ public class WeatherListActivity extends AppCompatActivity implements WeatherRec
         }
 
         mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setMessage(getString(R.string.weather_detail_loading));
+        mProgressDialog.setMessage(getString(R.string.weather_list_loading));
         mProgressDialog.show();
     }
 
@@ -83,6 +83,7 @@ public class WeatherListActivity extends AppCompatActivity implements WeatherRec
     @Override
     public void onGetWeatherListSuccess(List<Weather> weatherList) {
         mProgressDialog.hide();
+        mWeatherList.clear();
         mWeatherList.addAll(weatherList);
         mAdapter.notifyDataSetChanged();
     }

@@ -38,7 +38,8 @@ public class WeatherRecyclerViewAdapter extends RecyclerView.Adapter<WeatherRecy
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final Weather weather = mWeatherList.get(position);
-        holder.mTitle.setText(weather.getName());
+        holder.mName.setText(weather.getName());
+        holder.mWeatherDetail.setText(weather.getWeatherDetail());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,11 +54,13 @@ public class WeatherRecyclerViewAdapter extends RecyclerView.Adapter<WeatherRecy
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mTitle;
+        public final TextView mName;
+        public final TextView mWeatherDetail;
 
         public ViewHolder(View view) {
             super(view);
-            mTitle = (TextView) view.findViewById(R.id.weather_name);
+            mName = (TextView) view.findViewById(R.id.weather_name);
+            mWeatherDetail = (TextView) view.findViewById(R.id.weather_detail);
         }
     }
 }

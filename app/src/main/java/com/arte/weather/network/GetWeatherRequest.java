@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 public class GetWeatherRequest {
 
-    private static final String URL = "http://api.openweathermap.org/data/2.5/weather?id={id}&appid=" + Constants.API_KEY;
+    private static final String URL = "http://api.openweathermap.org/data/2.5/weather?id={id}&units=metric&appid=" + Constants.API_KEY;
 
     public interface Callbacks {
         void onGetWeatherSuccess(Weather weather);
@@ -45,6 +45,17 @@ public class GetWeatherRequest {
                     JSONArray weatherField = response.getJSONArray("weather");
                     if (weatherField != null && weatherField.length() != 0) {
                         weather.setWeatherDetail(((JSONObject)weatherField.get(0)).getString("main"));
+                        weather.setWeatherMoreDetail(((JSONObject)weatherField.get(0)).getString("description"));
+                    }
+                    JSONObject mainField = response.getJSONObject("main");
+                    if (mainField != null) {
+                        weather.setTemperature(mainField.getString("temp"));
+                        weather.setPressure(mainField.getString("pressure"));
+                        weather.setHumidity(mainField.getString("humidity"));
+                    }
+                    JSONObject windField = response.getJSONObject("wind");
+                    if (windField != null) {
+                        weather.setWindSpeed(windField.getString("speed"));
                     }
                 } catch (JSONException e) {
                     Log.e(GetWeatherListRequest.class.getSimpleName(), "Error deserializando JSON", e);

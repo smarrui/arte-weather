@@ -6,5 +6,4 @@ public class Constants {
     public static final String LATITUDE = "28.4269927";
     public static final String LONGITUDE = "-16.480989,15";
     public static final int CITIES_SIZE = 50;
-    public static final String LANGUAGE = "es";
 }
